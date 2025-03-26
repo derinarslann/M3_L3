@@ -1,2 +1,2 @@
-TOKEN = "MTMyOTEzMjU0NjI5Mzc2MDAyMQ.GYHjn5.r72RotNNWFjQkdHNXQQuzMQdpQAtmZlJybjIHc"
+TOKEN = ""
 DATABASE = "derin.db"
