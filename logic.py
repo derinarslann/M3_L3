@@ -135,7 +135,7 @@ class DB_Manager:
 
     def delete_skills(self, skill_id):
         sql = """DELETE FROM skills WHERE skill_id = ? """
-        self.__executemany(sql, [skill_id])
+        self.__executemany(sql, [(skill_id,)])
 
     def insert_skill2(self, skill_name):
         sql = '''INSERT INTO skills (skill_name) values(?)'''
@@ -151,6 +151,6 @@ if __name__ == '__main__':
     #manager.delete_project(334, 2)
     #manager.insert_skill2(('Youtube',))
     #manager.delete_skill(3, 3)
-    manager.delete_skills(2)
+    #manager.delete_skills(2)
 
     
