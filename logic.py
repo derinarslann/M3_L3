@@ -112,11 +112,11 @@ class DB_Manager:
     
     def get_project_info(self, user_id, project_name):
         sql = """
-SELECT project_name, description, url, status_name FROM projects 
-JOIN status ON
-status.status_id = projects.status_id)
-WHERE project_name=? AND user_id=?
-"""
+                SELECT project_name, description, url, status_name FROM projects 
+                JOIN status ON
+                status.status_id = projects.status_id)
+                WHERE project_name=? AND user_id=?
+                """
         return self.__select_data(sql=sql, data = (project_name, user_id))
 
 
@@ -133,6 +133,10 @@ WHERE project_name=? AND user_id=?
         sql = """DELETE FROM project_skills WHERE skill_id = ? AND project_id = ? """
         self.__executemany(sql, [(skill_id, project_id)])
 
+    def delete_skills(self, skill_id):
+        sql = """DELETE FROM skills WHERE skill_id = ? """
+        self.__executemany(sql, [skill_id])
+
     def insert_skill2(self, skill_name):
         sql = '''INSERT INTO skills (skill_name) values(?)'''
         self.__executemany(sql, [skill_name])
@@ -146,6 +150,7 @@ if __name__ == '__main__':
     #manager.update_projects('description',('SELAM!', 'my_project', 334))
     #manager.delete_project(334, 2)
     #manager.insert_skill2(('Youtube',))
-    manager.delete_skill(3, 3)
+    #manager.delete_skill(3, 3)
+    manager.delete_skills(2)
 
     
