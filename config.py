@@ -1,0 +1,2 @@
+TOKEN = ""
+DATABASE = "derin.db"
